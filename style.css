@@ -1,25 +1,267 @@
-:root{--bg:#F4EFE6;--fg:#263D32;--accent:#BC9644;--muted:#4E442B}
-[data-theme="2"]{--bg:#263D32;--fg:#F4EFE6;--accent:#BC9644;--muted:#EEDDC8}
-[data-theme="3"]{--bg:#182D1D;--fg:#EEDDC8;--accent:#DEB483;--muted:#DEB483}
-[data-theme="4"]{--bg:#EEDDC8;--fg:#41391F;--accent:#AB8040;--muted:#645130}
-*{box-sizing:border-box}
-body{margin:0;min-height:100vh;display:flex;flex-direction:column;background:var(--bg);color:var(--fg);
-  font-family:'Montserrat',sans-serif;font-weight:600;transition:background .4s,color .4s}
-.bar{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.5rem;gap:1rem;flex-wrap:wrap}
-button{font:inherit;cursor:pointer}
-.lang button{background:none;border:0;color:var(--fg);opacity:.6;letter-spacing:.15em;padding:.4rem .6rem;font-size:.8rem}
-.lang button[aria-pressed="true"]{opacity:1;border-bottom:2px solid var(--accent)}
-.theme{display:flex;gap:.6rem}
-.theme button{width:1.6rem;height:1.6rem;border-radius:50%;border:2px solid var(--accent);padding:0}
-.theme button[aria-pressed="true"]{outline:2px solid var(--accent);outline-offset:3px}
-main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem 1.5rem 4rem;max-width:44rem;margin:0 auto}
-.logo{min-height:9rem;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem}
-.logo img{max-width:min(18rem,80vw);max-height:12rem}
-.wordmark,h1{font-family:'Baskervville',serif;font-weight:600}
-.wordmark{font-size:3rem;color:var(--accent);letter-spacing:.08em}
-.eyebrow{text-transform:uppercase;letter-spacing:.3em;font-size:.8rem;color:var(--accent);margin:0}
-h1{font-size:clamp(1.8rem,5vw,3rem);margin:.5rem 0}
-.rule{width:5rem;height:2px;background:var(--accent);margin:1.2rem 0}
-.vip{font-size:1.1rem;line-height:1.7;color:var(--muted);margin:0 0 1.5rem}
-.area{letter-spacing:.2em;text-transform:uppercase;font-size:.9rem;margin:0 0 1.5rem}
-a{color:var(--accent)}
+:root {
+  color-scheme: light;
+  --bg: #F4EFE6;
+  --fg: #263D32;
+  --accent: #BC9644;
+  --muted: #586052;
+  --surface: #FAF8F2;
+}
+
+[data-theme="2"] {
+  color-scheme: dark;
+  --bg: #263D32;
+  --fg: #F4EFE6;
+  --accent: #C6A15B;
+  --muted: #DBD2C2;
+  --surface: #30483D;
+}
+
+[data-theme="3"] {
+  color-scheme: light;
+  --bg: #F7F5F0;
+  --fg: #20201D;
+  --accent: #9A7840;
+  --muted: #5E5A52;
+  --surface: #FFFDF9;
+}
+
+[data-theme="4"] {
+  color-scheme: light;
+  --bg: #EEDDC8;
+  --fg: #2A281F;
+  --accent: #AB8040;
+  --muted: #625742;
+  --surface: #F5E9D8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(ellipse at 50% 40%, var(--surface), transparent 68%),
+    var(--bg);
+  color: var(--fg);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  transition: background-color .35s ease, color .35s ease;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.bar {
+  width: min(100%, 90rem);
+  margin: 0 auto;
+  padding: 1.5rem clamp(1.25rem, 4vw, 3rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.lang,
+.theme {
+  display: flex;
+  align-items: center;
+}
+
+.lang {
+  gap: .3rem;
+}
+
+.lang button {
+  padding: .5rem .55rem;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  background: none;
+  color: var(--fg);
+  opacity: .62;
+  letter-spacing: .14em;
+  font-size: .7rem;
+  transition: opacity .2s ease, border-color .2s ease;
+}
+
+.lang button:hover,
+.lang button[aria-pressed="true"] {
+  opacity: 1;
+}
+
+.lang button[aria-pressed="true"] {
+  border-bottom-color: var(--accent);
+}
+
+.theme {
+  gap: .8rem;
+}
+
+.theme button {
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px var(--bg);
+  transition: transform .2s ease, outline-color .2s ease;
+}
+
+.theme button:hover {
+  transform: scale(1.12);
+}
+
+.theme button[aria-pressed="true"] {
+  outline: 1px solid var(--accent);
+  outline-offset: 3px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+main {
+  width: min(100%, 52rem);
+  flex: 1;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.logo {
+  width: min(100%, 21rem);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(48vh, 21rem);
+  object-fit: contain;
+  filter: drop-shadow(0 1rem 1.5rem rgba(20, 24, 20, .09));
+}
+
+.wordmark,
+h1 {
+  font-family: 'Baskervville', Georgia, serif;
+  font-weight: 400;
+}
+
+.wordmark {
+  color: var(--accent);
+  font-size: clamp(2.5rem, 9vw, 4rem);
+  letter-spacing: .06em;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: .32em;
+  font-size: .68rem;
+  font-weight: 600;
+}
+
+h1 {
+  margin: .8rem 0 0;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.12;
+  letter-spacing: -.025em;
+}
+
+.rule {
+  width: 3.5rem;
+  height: 1px;
+  margin: 1.5rem 0;
+  background: var(--accent);
+}
+
+.vip {
+  max-width: 39rem;
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+  font-size: .98rem;
+  line-height: 1.85;
+}
+
+.area {
+  margin: 0 0 1.6rem;
+  color: var(--fg);
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-size: .68rem;
+  font-weight: 500;
+}
+
+.contact {
+  margin: 0;
+  color: var(--muted);
+  font-size: .85rem;
+  line-height: 1.9;
+}
+
+a {
+  color: var(--fg);
+  text-decoration-color: var(--accent);
+  text-underline-offset: .25em;
+  transition: color .2s ease;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 35rem) {
+  .bar {
+    padding-top: 1.15rem;
+    padding-bottom: .75rem;
+  }
+
+  main {
+    padding: .5rem 1.25rem 3.5rem;
+  }
+
+  .logo {
+    width: min(72vw, 17rem);
+    margin-bottom: 1.25rem;
+  }
+
+  .eyebrow {
+    font-size: .6rem;
+    letter-spacing: .24em;
+  }
+
+  .vip {
+    font-size: .9rem;
+    line-height: 1.75;
+  }
+
+  .area {
+    font-size: .6rem;
+    letter-spacing: .15em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}

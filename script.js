@@ -19,10 +19,10 @@ const i18n = {
   }
 };
 const themes = [
-  { id: '1', logo: 'assets/logos/logo-1.png', color: '#F4EFE6' },
-  { id: '2', logo: 'assets/logos/logo-2.png', color: '#263D32' },
-  { id: '3', logo: 'assets/logos/logo-3.png', color: '#182D1D' },
-  { id: '4', logo: 'assets/logos/logo-4.png', color: '#EEDDC8' }
+  { id: '1', name: 'Alpine Ivory', logo: 'assets/logos/Logo-1.png', color: '#F4EFE6' },
+  { id: '2', name: 'Forest Reserve', logo: 'assets/logos/Logo-2.png', color: '#263D32' },
+  { id: '3', name: 'Heritage White', logo: 'assets/logos/Logo-3.png', color: '#F7F5F0' },
+  { id: '4', name: 'Warm Sand', logo: 'assets/logos/Logo-4.png', color: '#EEDDC8' }
 ];
 const store = (k, v) => { try { return v === undefined ? localStorage.getItem(k) : localStorage.setItem(k, v); } catch (e) { return null; } };
 const logo = document.getElementById('logo');
@@ -52,7 +52,8 @@ themes.forEach(t => {
   b.type = 'button';
   b.dataset.theme = t.id;
   b.style.background = t.color;
-  b.setAttribute('aria-label', 'Theme ' + t.id);
+  b.setAttribute('aria-label', t.name + ' theme');
+  b.title = t.name;
   b.addEventListener('click', () => setTheme(t.id));
   themeBox.appendChild(b);
 });
