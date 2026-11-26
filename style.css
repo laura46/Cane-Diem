@@ -85,7 +85,6 @@ main {
 }
 
 .hero {
-  position: relative;
   width: 100%;
   min-height: min(68vh, 42rem);
   padding: clamp(2.5rem, 7vw, 5.5rem) clamp(1.25rem, 7vw, 5rem);
@@ -94,32 +93,6 @@ main {
   align-items: center;
   justify-content: center;
   text-align: center;
-  border: 1px solid rgb(198 161 91 / 35%);
-  background: linear-gradient(145deg, rgb(48 72 61 / 48%), rgb(38 61 50 / 12%));
-  box-shadow: 0 2rem 6rem rgb(0 0 0 / 10%);
-}
-
-.hero::before,
-.hero::after {
-  position: absolute;
-  width: 2rem;
-  height: 2rem;
-  border-color: var(--accent);
-  content: "";
-}
-
-.hero::before {
-  top: .55rem;
-  left: .55rem;
-  border-top: 1px solid var(--accent);
-  border-left: 1px solid var(--accent);
-}
-
-.hero::after {
-  right: .55rem;
-  bottom: .55rem;
-  border-right: 1px solid var(--accent);
-  border-bottom: 1px solid var(--accent);
 }
 
 .logo {
