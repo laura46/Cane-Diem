@@ -153,12 +153,20 @@ h1 {
 }
 
 .status {
-  margin: 0 0 1.75rem;
+  margin: 0 0 1rem;
   color: var(--fg);
   text-transform: uppercase;
   letter-spacing: .2em;
   font-size: .72rem;
   font-weight: 500;
+}
+
+.area {
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  font-size: .65rem;
 }
 
 .contact {
