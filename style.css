@@ -134,6 +134,10 @@ h1 {
   font-weight: 500;
 }
 
+.soon {
+  margin-bottom: 1.5rem;
+}
+
 .area {
   margin: 0 0 1.5rem;
   color: var(--muted);

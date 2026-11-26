@@ -1,13 +1,16 @@
 const i18n = {
   de: {
+    soon: 'Bald verfügbar',
     headline: 'Zurück zur Natur – echtes Wohlbefinden für Hunde',
     status: 'Bewerbungen ab sofort möglich.'
   },
   it: {
+    soon: 'Prossimamente',
     headline: 'Ritorno alla natura – vero benessere per i cani',
     status: 'Candidature aperte.'
   },
   en: {
+    soon: 'Coming soon',
     headline: 'Back to nature - real dog wellness',
     status: 'Application now open.'
   }
