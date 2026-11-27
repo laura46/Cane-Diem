@@ -97,9 +97,9 @@ main {
 
 .logo {
   display: block;
-  width: min(100%, 36rem);
+  width: min(100%, 40rem);
   height: auto;
-  max-height: min(60vh, 36rem);
+  max-height: min(60vh, 40rem);
   object-fit: contain;
   margin-bottom: clamp(1.75rem, 5vh, 3rem);
   filter: drop-shadow(0 1rem 1.5rem rgb(0 0 0 / 12%));
@@ -180,7 +180,7 @@ a:hover {
   }
 
   .logo {
-    width: min(100%, 26rem);
+    width: min(100%, 30rem);
     max-height: 52vh;
   }
 
